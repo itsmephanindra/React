@@ -1,0 +1,39 @@
+body {
+            font-family: Nunito;
+        }
+
+        .main {
+            width: 70%;
+            margin: auto;
+            text-align: center;
+            padding: 20px;
+
+        }
+
+        .mh1 {
+            padding: 20px;
+        }
+
+        .main1 {
+            display: flex;
+            color: red;
+
+        }
+        .card{
+            width :70%;
+            padding-top: 20px;
+            background-color: #fff;
+        }
+        .cards{
+            width :70%;
+            padding-top: 80px;
+            display: grid;
+            grid-template-columns: auto auto auto;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        .steps{
+            background-color: rgb(151, 243, 212);
+            min-height: 60%;
+
+        }

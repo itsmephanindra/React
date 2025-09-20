@@ -1,0 +1,10 @@
+   .cb {
+       border: 1px solid black;
+   }
+
+   .title {
+       font-size: 40px;
+   }
+   .body-bg-light{
+    background-color: rbg(247,250,255);
+   }
