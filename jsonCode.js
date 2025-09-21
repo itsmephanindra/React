@@ -5,10 +5,29 @@ var userDetails={
     age:35
 }
 
+var personalDetails={
+    name:'',
+    age:'',
+    gender:''    
+}
 
-console.log(userName);
-console.log(userDetails.name);
-console.log(userDetails.age);
-console.log(userDetails.name.toUpperCase());
-console.log(userDetails.name.length);
-console.log(userDetails.name.toLowerCase());
+var eOrder={
+    orderId:1001,
+    orderName:'Laptoponeplus',
+    orderPrice:45000,
+    orderQty:1
+}
+personalDetails.name='Kumar';
+personalDetails.age=30;
+personalDetails.gender='Male';
+personalDetails['name']='Phanindra Kumar';
+userDetails.city='Bangalore';
+
+
+console.log(eOrder);
+
+eOrder.orderPrice=45000;
+eOrder.orderQty=2;
+eOrder.orderName='SmartPhone';
+
+console.log(eOrder);
