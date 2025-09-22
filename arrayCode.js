@@ -2,6 +2,7 @@
 Task: 
 1. Create arrays of names and emails, print all the items from both the arrays. 
 2. Create array of 5 youtube video titles and update 3rd and 4th items (3 and 4 are index numbers).
+This is updated in Github portal
 
 */
 
