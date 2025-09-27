@@ -21,3 +21,5 @@ var ecommerceProducts = [
     console.log("User names are equal: " + (userName1 === userName2));
     console.log("Is age1 greater than 18: " + (age1 > 18));
     console.log("Is age2 greater than 18: " + (age2 > 18));
+
+    console.log("E-commerce Products:", ecommerceProducts[0].id, ecommerceProducts[0].name, ecommerceProducts[0].price, ecommerceProducts[0].category);
