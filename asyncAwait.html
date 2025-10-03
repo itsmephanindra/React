@@ -1,0 +1,20 @@
+<html>
+    <head>
+        <title>Async Await Example</title>
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+        <script>
+            async function getProduct(){
+                var response=await axios.get('https://dummyjson.com/products/');
+                console.log(response);
+            }
+            getProduct();
+
+        </script>
+
+
+    </head>
+
+    <body>
+        <h3>This is aync await code</h3>
+    </body>
+</html>
