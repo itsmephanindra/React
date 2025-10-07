@@ -1,0 +1,24 @@
+<html>
+    <head>
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+        <script>
+        async function login(){
+            try{
+            var response=await axios.get('https://dummyjson.com/products');
+            console.log(response);
+            }catch(error){
+                console.log("Error Occurred",error.message);
+            }
+
+        }
+        login();
+
+        </script>
+
+    </head>
+
+    <body>
+        <h3>This is error handling code</h3>
+    </body>
+</html>
