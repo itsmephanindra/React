@@ -1,0 +1,68 @@
+<html>
+<head>
+    <title>Home Page</title>
+    <script>
+
+        class Homepage{
+
+          constructor(name,email,wlist){
+                console.log("This is home page constructor");
+                 this.name=name;
+                 this.email=email;
+                 this.wlist=wlist;
+                    }
+       
+         login(){
+             console.log("This is login function",this.name);
+                try{
+                    if (this.name.length<10)
+                        console.log("Name should be minimum 10 characters");
+                        else
+                        console.log("Login successful");
+
+                }catch(error){
+                    console.log("Error Occurred",error.message);
+
+                }
+
+                }
+
+        signIn(){
+            console.log("This is signIn function",this.email);
+            try{
+                if(!this.email.includes("@"))
+                    console.log("Email should contain @ character");
+                    else
+                    console.log("SignIn successful");
+            }catch(error){
+                console.log("Error Occurred",error.message);
+            }
+                }
+        
+        wishList(){
+            console.log("This is wishList function");
+            try{
+                if(this.wlist.length<5)
+                    console.log("Wishlist should contain minimum 5 items",this.wlist);
+                    else
+                    console.log("Wishlist displayed successfully",this.wlist);
+
+            }catch(error){
+                console.log("Error Occurred",error.message);
+            }
+                }
+    }
+
+        home=new Homepage("Phanindra kumar","phanindra@=example.com","phone,laptop,tablet");
+        home.login();
+        home.signIn();
+        home.wishList();
+
+
+    </script>
+</head>
+<body>
+    <h3>This is Home Page</h3>
+
+</body>
+</html>
