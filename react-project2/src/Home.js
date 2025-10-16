@@ -1,3 +1,5 @@
+import Form from "./Form";
+
 function Home(){
 return (
 <>
@@ -9,6 +11,8 @@ return (
     <div className="mb-2">
         <a href="/login">Login</a>
         </div>
+
+        <Form/>
 </div>
 </>
 
