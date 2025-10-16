@@ -4,7 +4,7 @@ function Form(){
 
     var [gender,setGender]=useState("");
     var [course,setCourses]=useState("");
-    var [checkbox,setCheckbox]=useState("");
+    var [checkbox,setCheckbox]=useState(false);
     var [radiocheck,setCheckRadio]=useState("");
 
 
@@ -15,8 +15,17 @@ function Form(){
     function handleGender(e){
         setGender(e.target.value);
     }
+    
+    function handleCheckBox(e){
+        if(e.target.checked)
+            setCheckbox(true)
 
-    function 
+        else{
+            setCheckbox(false)
+        }
+            
+
+    }
 
     return (
         <div className="container"> 
@@ -50,14 +59,11 @@ function Form(){
                                     </label>
                                     </div>
                                  <div class="form-check">
-                                    <input className="form-check-input" type="checkbox" name="checkDefault" id="checkDefault"/>
+                                    <input className="form-check-input" type="checkbox" name="checkDefault" id="checkDefault" onChange={e=>handleCheckBox(e)}/>
                                     <label className="form-check-label" for="checkDefault">
                                         Avatar 1
                                     </label>
-                                    <input className="form-check-input" type="checkbox" name="checkDefault" id="checkDefault"/>
-                                    <label className="form-check-label" for="checkDefault">
-                                        Avatar 2
-                                    </label>
+                                   
                                 </div>
                         </div>
 
@@ -68,7 +74,8 @@ function Form(){
                 <div className="col-5">
                     <br/><br/><br/><br/><br/>
                     Courses Selected {course}  <br/>
-                    Gender is {gender}
+                    Gender is {gender} <br/>
+                    Checkbox is {checkbox.toString()}
                 </div>
 
                 </div>
