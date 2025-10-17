@@ -1,5 +1,6 @@
 import { useState } from "react"
 import validateEmail from "../Utils/Utils"
+import axios from "axios"
 
 function Signup() {
 
@@ -11,6 +12,9 @@ function Signup() {
      var [emailerror,setEmailError]=useState("");
      var [mobileerror,setMobileError]=useState("");
     var[pworderror,setPwordError]=useState("")
+    var [apiSuccess,setApiSuccess]=useState("");
+    var [apiError,setApiError]=useState("");
+
     
     function handleNameChange(event){
         setName(event.target.value)
@@ -27,7 +31,7 @@ function Signup() {
     function handlePasswordChange(event){
         setPassword(event.target.value)
     }
-    function handleCreateAccount(e){
+    async function handleCreateAccount(e){
 
         var errors=0;
 
@@ -57,6 +61,26 @@ function Signup() {
 
         if(errors==0)
             console.log("Calling APi");
+            var apiInputData={
+                name:name,
+                email:email,
+                mobile:mobile,
+                password:password
+            }
+            console.log(apiInputData);
+            var apiResponse=await axios.post('https://api.softwareschool.co/auth/signup',apiInputData);
+            console.log(apiResponse.data.result);
+
+            if (apiResponse.data.result=="SUCCESS")
+            {
+                setApiSuccess("Signup Success");
+                setApiError("");
+            }
+            else
+            {
+                setApiError(apiResponse.data.message);
+                setApiSuccess("");
+            }
         
     }
 
@@ -66,8 +90,15 @@ function Signup() {
                 <div className="row">
                     <div className="col-4">
                         <h4>Create Account</h4>
-                        
-                            <div className="mb-3">
+                                    <div class="alert alert-danger" role="alert">
+                                        {apiError}
+                                        </div>
+                                    
+                                    <div class="alert alert-success" role="alert">
+                                        {apiSuccess}
+                                        </div>
+                                   
+                              <div className="mb-3">
                                 <label>Name</label>
                                 <input type="text" className="form-control" placeholder="Enter your Name" onChange={e=>handleNameChange(e)}/>
                                 <div className="text-danger">{nameerror}</div>
@@ -103,6 +134,8 @@ function Signup() {
                                {email} <br/>
                                 {mobile} <br/> 
                                 {password} <br/>
+                                {apiSuccess}<br/>
+                                {apiError}
 
                         </div>  
                     </div>
