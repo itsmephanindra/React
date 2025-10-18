@@ -1,5 +1,6 @@
 import { useState } from "react";
 import validateEmail from "../Utils/Utils";
+import axios from "axios";
 
 function Login(){
  
@@ -7,6 +8,8 @@ var [email,setEmail]=useState("");
 var [password,setPassword]=useState("");
 var [emailError,setEmailError]=useState("");
 var [pwordError,setPwordError]=useState("");
+var [apiResponse,setapiResponse]=useState("");
+var [token,setToken]=useState("");
 
 function handleEmail(event){
  setEmail(event.target.value);
@@ -15,7 +18,7 @@ function handlePassword(event){
  setPassword(event.target.value);
 }
 
-function validateLogin(){
+async function validateLogin(){
     var errors=0;
     if (!validateEmail(email))
     {setEmailError("Email is invalid")
@@ -31,8 +34,26 @@ function validateLogin(){
     else {setPwordError("")}
 
     if(errors==0)
-        console.log("calling API....")
+        {console.log("calling API....")
+        var apiData={
+            email:email,
+            password:password
+        }
+        try {
+            var apiResponse=await axios.post("https://api.softwareschool.co/auth/login",apiData)
+            setapiResponse(apiResponse.data.result);
 
+            if(apiResponse.data.result==="SUCCESS"){
+                setToken(apiResponse.data.data.token);
+            }
+            
+        } catch (error) {
+            setapiResponse("Login failed with unknown error" || error.message);
+
+        }
+
+
+}
 }
 
 return(
@@ -56,6 +77,11 @@ return(
 
             <div>
                 <button className="btn btn-warning" onClick={e=>validateLogin(e)}>Login</button>
+                </div>
+                <br/>
+                <div className="alert alert-warning">
+                    {apiResponse}
+                    {token}
                 </div>
 
             <a href="/">Home Page</a>
