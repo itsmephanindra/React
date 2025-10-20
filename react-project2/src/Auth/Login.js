@@ -33,7 +33,7 @@ async function validateLogin(){
     }
     else {setPwordError("")}
 
-    if(errors==0)
+    if(errors===0)
         {console.log("calling API....")
         var apiData={
             email:email,
@@ -45,7 +45,10 @@ async function validateLogin(){
 
             if(apiResponse.data.result==="SUCCESS"){
                 setToken(apiResponse.data.data.token);
+                localStorage.setItem("userId", apiResponse.data.data.userId);
+                window.location="/";
             }
+            
             
         } catch (error) {
             setapiResponse("Login failed with unknown error" || error.message);
@@ -77,9 +80,10 @@ return(
 
             <div>
                 <button className="btn btn-warning" onClick={e=>validateLogin(e)}>Login</button>
+                {localStorage.getItem("userId")}
                 </div>
                 <br/>
-                <div className="alert alert-warning">
+                <div className="alert alert-warning col-4">
                     {apiResponse}
                     {token}
                 </div>
