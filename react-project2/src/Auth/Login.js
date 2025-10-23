@@ -40,6 +40,21 @@ async function validateLogin(){
             password:password
         }
         try {
+
+            // var fetchApiData={
+            //     headers:{
+            //         "Content-Type":"application/json"
+            //     },
+            //     method:"POST",
+            //     body:JSON.stringify(apiData)
+
+            // }
+
+            // var apiResponse=await fetch("https://api.softwareschool.co/auth/login", fetchApiData);
+            // apiResponse=await apiResponse.json();
+            // console.log(apiResponse)
+
+
             var apiResponse=await axios.post("https://api.softwareschool.co/auth/login",apiData)
             setapiResponse(apiResponse.data.result);
 
