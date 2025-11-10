@@ -34,6 +34,7 @@ return (
                     <li className="nav-item"><a className="nav-link" href="/courses">Courses</a></li>
                     <li className="nav-item"><a className="nav-link" href="/signup">SignUp</a></li>
                     <li className="nav-item"><a className="nav-link" href="/login">Login</a></li>   
+                    <li className="nav-item"><a className="nav-link" href="/products">Products</a></li>
 
 
 
