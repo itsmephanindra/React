@@ -1,50 +1,77 @@
-import { use, useEffect, useState } from "react";
-import Footer from "../Shared/Footer";
-import Header from "../Shared/Header";
-import axios from "axios";
+import Header from '../Shared/Header'
+import Footer from '../Shared/Footer'
+import { useEffect, useState } from 'react';
+import axios from 'axios';
 
-function ProductList() {
-  let [products, setProducts] = useState([]);
 
-  useEffect(() => {
-    async function getProucts() {
-      var apiResponse = await axios.get("https://dummyjson.com/products");
-      setProducts(apiResponse.data.products);
-    }
+function ProductList(){
 
-    getProucts();
-  }, []);
-  return (
-    <>
-      <div className="container">
-        <div className="row">
-          <div className="col-12 text-center">
-            <Header />
-          </div>
-        </div>
-        <div className="row mt-5">
-          {products.map((product) => (
-            <div className="col-3">
-              <div className="card shadow mt-2 mb-2">
-                <img
-                  src={product.thumbnail}
-                  height="200"
-                  className="card-img-top"
-                  alt={product.title}
-                />
-              </div>
-            </div>
-          ))}
-        </div>
+let [products,setProducts]=useState([]);
 
-        <div className="row">
-          <div className="col-12">
-            <Footer />
-          </div>
-        </div>
-      </div>
-    </>
-  );
+useEffect(  ()=>{
+  async function getProducts(){
+    let apiResponse=await axios.get('https://dummyjson.com/products');
+    
+    let data=apiResponse.data.products.map(product => {
+              product.is_fav=false;
+              return product;
+
+
+    } )
+
+    setProducts(data);
+    
+  }
+  
+getProducts();
+},[])
+
+
+function handleFav(data){
+  console.log(data);
+
 }
 
+    return (
+
+<div>
+        <div className="container">
+
+        <div className="row"><div className="col-12"><Header/></div></div>
+
+        <div className='row mt-5 mb-5'>
+            {
+                products.map(product =>(
+                    <div className='col-3 mt-2 mb-2'>
+                        <div className='card shadow'>  
+                          <img src={product.thumbnail}/>
+                          <div className="card-body">
+                          <h5 className="card-title">{product.title}</h5>
+                          <p className="card-text">{product.description}</p>
+                          <button className="btn btn-primary" onClick={e=>handleFav(product)}> <i className="bi bi-heart"></i></button>
+                          </div>                   
+                        </div>
+
+                    </div>
+                )
+                ) 
+            }
+
+
+        </div>
+
+        <div className="row"><div className="col-12"><Footer/></div></div>
+
+
+        </div>
+
+
+
+
+
+</div>
+
+)
+
+}
 export default ProductList;
