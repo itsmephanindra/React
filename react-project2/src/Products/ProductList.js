@@ -17,7 +17,7 @@ useEffect(  ()=>{
               return product;
 
 
-    } )
+   } )
 
     setProducts(data);
     
@@ -28,7 +28,22 @@ getProducts();
 
 
 function handleFav(data){
-  console.log(data);
+
+   let temp_product=products.map(product => {
+          if (data === product.id){
+            if(product.is_fav===false){  
+            product.is_fav=true; 
+          }
+          else{
+            product.is_fav=false;
+          }
+        }
+
+            return product;
+   })
+     setProducts(temp_product);
+ 
+
 
 }
 
@@ -48,7 +63,11 @@ function handleFav(data){
                           <div className="card-body">
                           <h5 className="card-title">{product.title}</h5>
                           <p className="card-text">{product.description}</p>
-                          <button className="btn btn-primary" onClick={e=>handleFav(product)}> <i className="bi bi-heart"></i></button>
+                          <button className="btn btn-primary" onClick={e=>handleFav(product.id)}> <i className="bi bi-heart"></i>
+                          { product.is_fav === false && <span>Add</span>}
+                          { product.is_fav === true && <span>Remove</span>}
+                          
+                          </button>
                           </div>                   
                         </div>
 
