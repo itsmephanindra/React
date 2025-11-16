@@ -8,6 +8,10 @@ import Signup from './Auth/Signup';
 import Home from './Home/Home';
 import List from './Courses/List';
 import ProductList from './Products/ProductList';
+import ProfileUpdate from './Profile/ProfileUpdate';
+import Product from './ReadData/Product';
+import UsersList from './Users/UsersList';
+import Posts from './Posts/Posts';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -20,7 +24,10 @@ root.render(
   <Route path="/signup" Component={Signup} />
   <Route path="/courses" Component={List} />
   <Route path="/products" Component={ProductList}/>
-
+  <Route path="/profile" Component={ProfileUpdate}/>
+  <Route path="/product" Component={Product}/>
+  <Route path="/users" Component={UsersList}/>
+  <Route path="/posts" Component={Posts}/>
 </Routes>
 </BrowserRouter>
   </React.StrictMode>

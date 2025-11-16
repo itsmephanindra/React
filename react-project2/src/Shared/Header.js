@@ -35,8 +35,10 @@ return (
                     <li className="nav-item"><a className="nav-link" href="/signup">SignUp</a></li>
                     <li className="nav-item"><a className="nav-link" href="/login">Login</a></li>   
                     <li className="nav-item"><a className="nav-link" href="/products">Products</a></li>
-
-
+                    <li className="nav-item"><a className="nav-link" href="/profile">Profile</a></li>
+                    <li className="nav-item"><a className="nav-link" href="/product">GetProduct</a></li>
+                    <li className="nav-item"><a className="nav-link" href="/users">UsersList</a></li>
+                    <li className="nav-item"><a className="nav-link" href="/posts">Posts</a></li>
 
 
                 </ul>
