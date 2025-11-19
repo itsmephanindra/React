@@ -1,0 +1,8 @@
+.body_content{
+
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    margin: 15px;
+    border-radius: 10px;
+}
