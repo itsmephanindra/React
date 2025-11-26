@@ -12,12 +12,21 @@ function NavBar() {
             <li className="nav-item me-2"><a href="/" className="nav-link">Home </a></li>
             <li className="nav-item me-2"><a href="/" className="nav-link">Signup</a></li>
 
-            <li className="nav-item me-2">
-             <Login/>
-            </li>
-            <li className="nav-item me-2">
-              <CreateAccount/>
-            </li>
+            <li className="nav-item me-2"><a href="/" className="nav-link">Login</a></li>
+
+                      <div className="dropdown">
+              <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Dropdown button
+              </button>
+              <ul className="dropdown-menu">
+                <li><a className="dropdown-item" href="/login">Login</a></li>
+                <li><a className="dropdown-item" href="/signup">New Users?  
+                  <span className="text-primary">Start Here</span>
+                  </a></li>
+                
+              </ul>
+            </div>
+            
           </ul>
         </div>
       </div>

@@ -1,13 +1,26 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import Home from './Home'
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import Home from "./Home";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+import reportWebVitals from "./reportWebVitals";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/js/bootstrap.bundle.min.js";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Login from "./Shared/Login";
+import CreateAccount from "./Shared/CreateAccoun";
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <Home />
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" Component={Home}/>
+        <Route path="/login" Component={Login}/>
+        <Route path="/signup" Component={CreateAccount}/>
+          
+      </Routes>
+    </BrowserRouter>
   </React.StrictMode>
 );
 
