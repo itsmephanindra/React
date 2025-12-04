@@ -3,19 +3,19 @@ import CreateAccount from "./CreateAccoun";
 
 function NavBar() {
   return (
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <nav className="navbar navbar-expand-lg bg-body-tertiary">
       <div className="container-fluid">
-        <h3 classname="navbar-brand">My ToDo</h3>
+        <h3 className="navbar-brand">My ToDo</h3>
 
         <div>
           <ul className="navbar-nav">
             <li className="nav-item me-2"><a href="/" className="nav-link">Home </a></li>
-            <li className="nav-item me-2"><a href="/" className="nav-link">Signup</a></li>
+            <li className="nav-item me-2"><a href="/signup" className="nav-link">Signup</a></li>
 
             <li className="nav-item me-2"><a href="/" className="nav-link">Login</a></li>
 
                       <div className="dropdown">
-              <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <button className="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Dropdown button
               </button>
               <ul className="dropdown-menu">
