@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import Home from "./Home";
+import {ResetPassword} from "./Shared/ResetPassword";
 
 import reportWebVitals from "./reportWebVitals";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -18,6 +19,7 @@ root.render(
         <Route path="/" Component={Home}/>
         <Route path="/login" Component={Login}/>
         <Route path="/signup" Component={CreateAccount}/>
+        <Route path="/reset-password" Component={ResetPassword}/>
           
       </Routes>
     </BrowserRouter>

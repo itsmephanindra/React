@@ -4,3 +4,8 @@ export const ERROR_MESSAGES = {
 "email.too.short": "Email should be minimum 3 characters",
 
 }
+
+export const RESET_ERRORS={
+    "email.too.short":"Entered Email is Too Short",
+    "email.reset.success":"Email Reset is Initiated"
+}
