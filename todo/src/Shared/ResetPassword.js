@@ -46,7 +46,7 @@ export const ResetPassword = () => {
 
   return (
   <div className="container-fluid">
-      <div className="row mt-3">
+      <div className="row">
         <NavBar />
       </div>
       <div className="row justify-content-center mt-5">

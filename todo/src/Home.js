@@ -8,7 +8,7 @@ function Home() {
       <div>
         <NavBar />
       </div>
-      <div>To do Home page</div>
+      <div>Amazon Home page</div>
 
       <div>
         <Footer />

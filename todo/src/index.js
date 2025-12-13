@@ -7,6 +7,7 @@ import {ResetPassword} from "./Shared/ResetPassword";
 import reportWebVitals from "./reportWebVitals";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
+import 'bootstrap-icons/font/bootstrap-icons.min.css';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Login from "./Shared/Login";
 import CreateAccount from "./Shared/CreateAccoun";

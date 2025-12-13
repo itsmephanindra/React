@@ -12,3 +12,15 @@ width: 300px;
 
 
 }
+.search-drop-down{
+    position: absolute;
+    width: 100%;
+    background-color: white;
+    z-index: 1000;
+    border: 1px solid #ced4da;
+    top: 37px;
+    padding: 20px;
+    
+
+
+}

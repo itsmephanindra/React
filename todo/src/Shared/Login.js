@@ -3,6 +3,7 @@ import Logo from "../Images/Logo.png";
 import { useState } from "react";
 import { ERROR_MESSAGES } from "../constants/erros";
 import { signInApi, signUpApi } from "../services/authService";
+import { Link } from "react-router-dom";
 
 const Login = () => {
   let [loginData, setLoginData] = useState({
@@ -63,7 +64,7 @@ const Login = () => {
 
   return (
     <div className="container-fluid">
-      <div className="row mt-3">
+      <div className="row">
         <NavBar />
       </div>
       <div className="row justify-content-center mt-5">
@@ -127,7 +128,7 @@ const Login = () => {
                 }
 
                 <div>
-                  Forgot Password? <a href="/reset-password">Click Here</a>
+                  Forgot Password? <Link to="/reset-password">Click Here</Link>
 
                 </div>
 
