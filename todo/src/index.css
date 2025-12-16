@@ -24,3 +24,12 @@ width: 300px;
 
 
 }
+.suggestion_item{
+  padding:5px;
+  text-align:'center';
+  cursor:pointer;
+
+}
+.suggestion_item:hover{
+  background-color:#f2f2f2;
+}

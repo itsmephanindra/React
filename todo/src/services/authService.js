@@ -17,3 +17,5 @@ export const signInApi = async (data) => {
 export const resetPasswordApi=async (data)=>{
   return await axiosinstance.post(API_END_POINT.FORGOT_PASSWORD,data)
 }
+
+

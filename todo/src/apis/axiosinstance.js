@@ -17,7 +17,7 @@ axiosinstance.interceptors.request.use((req) => {
 
 axiosinstance.interceptors.response.use((res) => {
 
- if (res.headers[API_CONFIG.AUTHORIZATION] != undefined) {
+ if (res.headers[API_CONFIG.AUTHORIZATION] !== undefined) {
   localStorage.setItem(API_CONFIG.TOKEN, res.headers[API_CONFIG.AUTHORIZATION]);
 
  }

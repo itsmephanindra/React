@@ -1,7 +1,7 @@
 import { useState } from "react";
 import NavBar from "./NavBar";
 import Logo from "../Images/Logo.png";
-import { ERROR_MESSAGES, RESET_ERRORS } from "../constants/erros";
+import { RESET_ERRORS } from "../constants/erros";
 import { resetPasswordApi } from "../services/authService";
 
 export const ResetPassword = () => {
@@ -52,7 +52,7 @@ export const ResetPassword = () => {
       <div className="row justify-content-center mt-5">
         <div className="col-4">
           <div className="text-center">
-            <img src={Logo} className="logo" />
+            <img src={Logo} className="logo"  alt="logo"/>
           </div>
           <div className="card mt-2">
             <div className="card-body">
